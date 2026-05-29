@@ -1,0 +1,43 @@
+name: Bug report
+description: Report a problem with cheatmd.nvim.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List the smallest set of steps that reproduces the issue.
+    validations:
+      required: true
+
+  - type: input
+    id: neovim-version
+    attributes:
+      label: Neovim version
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version or commit
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant output
+      description: Paste error messages or relevant output. Remove private paths or workspace content first.
+      render: text

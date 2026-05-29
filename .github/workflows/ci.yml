@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Lua
+        uses: leafo/gh-actions-lua@v11
+        with:
+          luaVersion: "5.4"
+
+      - name: Setup Neovim
+        uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: true
+          version: stable
+
+      - name: Check Lua syntax
+        run: find lua -name '*.lua' -print0 | xargs -0 -n1 luac -p
+
+      - name: Load plugin
+        run: nvim --headless -u NONE -i NONE -c "set rtp+=." -c "lua require('cheatmd').setup({ enable_linter = false })" -c "qa"
