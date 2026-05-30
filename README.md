@@ -1,6 +1,6 @@
 # cheatmd.nvim
 
-A lightweight Neovim plugin for **[CheatMD](https://github.com/gubarz/cheatmd)** cheatsheets. Written in Lua and Vim syntax, with editor integration, diagnostic linting, and interactive execution.
+A lightweight Neovim plugin for **[CheatMD](https://github.com/cheatmd-dev/cheatmd)** cheatsheets. Written in Lua and Vim syntax, with editor integration, diagnostic linting, and interactive execution.
 
 ## Features
 
@@ -14,7 +14,7 @@ A lightweight Neovim plugin for **[CheatMD](https://github.com/gubarz/cheatmd)**
 cheatmd.nvim requires the `cheatmd` command-line tool for linting and interactive execution.
 
 - Website: https://cheatmd.dev
-- GitHub: https://github.com/gubarz/cheatmd
+- GitHub: https://github.com/cheatmd-dev/cheatmd
 
 After installing, make sure `cheatmd` is available in your system path. You can also set an absolute path in plugin setup.
 
@@ -30,7 +30,7 @@ Add the following to your plugin config files:
 
 ```lua
 return {
-  "gubarz/cheatmd.nvim",
+  "cheatmd-dev/cheatmd.nvim",
   ft = "markdown",
   config = function()
     require("cheatmd").setup({
